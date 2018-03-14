@@ -6,23 +6,6 @@ import * as libraryActions from '../../actions/libraryActions';
 class LibraryPage extends React.Component {
   constructor(props, context) {
     super(props, context);
-
-    this.state = {
-      book: { title: "" }
-    };
-
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onClickSave = this.onClickSave.bind(this);
-  }
-
-  onTitleChange(event) {
-    const book = this.state.book;
-    book.title = event.target.value;
-    this.setState({book: book});
-  }
-
-  onClickSave() {
-    this.props.actions.addBook(this.state.book);
   }
 
   bookRow (book, index) {
@@ -34,16 +17,6 @@ class LibraryPage extends React.Component {
       <div>
         <h1>Library</h1>
         {this.props.library.map(this.bookRow)}
-        <h2>Add Book</h2>
-        <input
-          type="text"
-          onChange={this.onTitleChange}
-          value={this.state.book.title} />
-
-        <input
-          type="submit"
-          value="Save"
-          onClick={this.onClickSave} />
       </div>
     );
   }
