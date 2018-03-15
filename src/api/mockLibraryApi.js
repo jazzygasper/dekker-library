@@ -126,8 +126,8 @@ const books = [
     title: "You Don't Know JS: ES6 & Beyond",
     author: "Kyle Simpson",
     subject: "JavaScript",
-    currentOwner: "",
-    checkOutDate: "",
+    currentOwner: "Aydin",
+    checkOutDate: "01/03/2018",
     amazonLink: "https://www.amazon.co.uk/You-Dont-Know-JS-Beyond/dp/1491904240/ref=sr_1_2?ie=UTF8&qbookId=1479475136&sr=8-2&keywords=you+don%27t+know+JS"
   },
   {

@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as libraryActions from '../../actions/libraryActions';
+import LibraryList from './LibraryList';
 
 class LibraryPage extends React.Component {
   constructor(props, context) {
@@ -13,10 +14,11 @@ class LibraryPage extends React.Component {
   }
 
   render () {
+    const {library} = this.props;
     return (
       <div>
         <h1>Library</h1>
-        {this.props.library.map(this.bookRow)}
+        <LibraryList library={library} />
       </div>
     );
   }
