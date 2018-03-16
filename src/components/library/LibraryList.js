@@ -16,7 +16,7 @@ const LibraryList = ({ library }) => {
       </thead>
       <tbody>
         {library.map(book =>
-          <LibraryListRow key={book.bookId} book={book} />
+          <LibraryListRow key={book.id} book={book} />
         )}
       </tbody>
     </table>

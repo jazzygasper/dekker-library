@@ -11,7 +11,7 @@ export function loadBooksSuccess(books) {
 
 export function loadBooks() {
   return function(dispatch) {
-    return libraryApi.getAllBooks().then(books => {
+    return libraryApi.getAllLibraryBooks().then(books => {
       dispatch(loadBooksSuccess(books));
     }).catch(error => {
       throw(error);
