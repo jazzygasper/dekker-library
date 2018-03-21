@@ -1,16 +1,22 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router';
 import * as libraryActions from '../../actions/libraryActions';
 import LibraryList from './LibraryList';
 
 class LibraryPage extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.redirectToAddBookPage = this.redirectToAddBookPage.bind(this);
   }
 
   bookRow (book, index) {
     return <div key={index}>{book.title}</div>;
+  }
+
+  redirectToAddBookPage () {
+    browserHistory.push('/book');
   }
 
   render () {
@@ -18,6 +24,11 @@ class LibraryPage extends React.Component {
     return (
       <div>
         <h1>Library</h1>
+        <input
+          type="submit"
+          value="Add Book"
+          className="btn btn-primary"
+          onClick={this.redirectToAddBookPage}/>
         <LibraryList library={library} />
       </div>
     );

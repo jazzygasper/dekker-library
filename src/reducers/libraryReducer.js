@@ -1,21 +1,24 @@
 import * as types from '../actions/actionTypes';
+import initialState from './initialState';
 
-export default function libraryReducer(state = [], action) {
-  // switch(action.type) {
-  //   case types.ADD_BOOK:
-  //     return [...state,
-  //       Object.assign({}, action.book)
-  //     ];
-  //
-  //   default:
-  //     return state;
-  // }
+export default function libraryReducer(state = initialState.library, action) {
   switch(action.type) {
-    case types.LOAD_BOOKS_SUCCESS:
-      return action.books;
+    case types.LOAD_LIBRARY_SUCCESS:
+      return action.library;
+
+    case types.CREATE_BOOK_SUCCESS:
+      return [
+        ...state,
+        Object.assign({}, action.book)
+      ];
+
+    case types.UPDATE_BOOK_SUCCESS:
+      return [
+        ...state.filter(book => book.id !== action.book.id),
+        Object.assign({}, action.book)
+      ];
 
     default:
       return state;
   }
-
 }

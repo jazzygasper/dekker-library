@@ -232,17 +232,17 @@ class LibraryApi {
           reject(`Title must be at least ${minBookTitleLength} characters.`);
         }
 
-        // if (book.id) {
-        //   const existingBookIndex = library.findIndex(a => a.id == book.id);
-        //   library.splice(existingBookIndex, 1, book);
-        // } else {
-        //   //Just simulating creation here.
-        //   //The server would generate ids and watchHref's for new courses in a real app.
-        //   //Cloning so copy returned is passed by value rather than by reference.
-        //   book.id = generateId(book);
-        //   book.watchHref = `http://www.pluralsight.com/courses/${book.id}`;
-        //   library.push(book);
-        // }
+        if (book.id) {
+          const existingBookIndex = library.findIndex(a => a.id == book.id);
+          library.splice(existingBookIndex, 1, book);
+        } else {
+          //Just simulating creation here.
+          //The server would generate ids and watchHref's for new courses in a real app.
+          //Cloning so copy returned is passed by value rather than by reference.
+          book.id = generateId(book);
+          book.watchHref = `http://www.pluralsight.com/courses/${book.id}`;
+          library.push(book);
+        }
 
         resolve(book);
       }, delay);
