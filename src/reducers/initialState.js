@@ -1,3 +1,4 @@
 export default {
-  library: []
+  library: [],
+  ajaxCallsInProgress: 0
 };
