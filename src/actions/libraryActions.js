@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 import libraryApi from '../api/mockLibraryApi';
-import {beginAjaxCall} from './ajaxStatusActions';
+import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 export function loadLibrarySuccess(library) {
   return { type: types.LOAD_LIBRARY_SUCCESS, library };
@@ -31,6 +31,7 @@ export function saveBook(book) {
     return libraryApi.saveBook(book).then(savedBook => {
       book.id ? dispatch(updateBookSuccess(savedBook)) : dispatch(createBookSuccess(savedBook));
     }).catch(error => {
+      dispatch(ajaxCallError(error));
       throw(error);
     });
   };

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as libraryActions from '../../actions/libraryActions';
 import BookForm from './BookForm';
+import toastr from 'toastr';
 
 class ManageLibraryPage extends React.Component {
   constructor(props, context) {
@@ -10,7 +11,8 @@ class ManageLibraryPage extends React.Component {
 
     this.state = {
       book: Object.assign({}, this.props.book),
-      errors: {}
+      errors: {},
+      saving: false
     };
     this.updateBookState = this.updateBookState.bind(this);
     this.saveBook = this.saveBook.bind(this);
@@ -31,7 +33,18 @@ class ManageLibraryPage extends React.Component {
 
   saveBook(event) {
     event.preventDefault();
-    this.props.actions.saveBook(this.state.book);
+    this.setState({saving: true});
+    this.props.actions.saveBook(this.state.book)
+      .then(() => this.redirect())
+      .catch(error => {
+        toastr.error(error);
+        this.setState({saving: false});
+      });
+  }
+
+  redirect() {
+    this.setState({saving: false});
+    toastr.success('Book Saved');
     this.context.router.push('/library');
   }
 
@@ -42,6 +55,7 @@ class ManageLibraryPage extends React.Component {
         onSave={this.saveBook}
         book={this.state.book}
         errors={this.state.errors}
+        saving={this.state.saving}
       />
     );
   }
