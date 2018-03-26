@@ -4,7 +4,7 @@ import App from './components/App';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import LibraryPage from './components/library/LibraryPage';
-import ManageLibraryPage from './components/library/ManageLibraryPage';
+import ManageLibraryPage from './components/library/ManageLibraryPage'; //eslint-disable-line import/no-named-as-default
 
 export default (
   <Route path="/" component={App}>

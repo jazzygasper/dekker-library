@@ -5,7 +5,7 @@ import * as libraryActions from '../../actions/libraryActions';
 import BookForm from './BookForm';
 import toastr from 'toastr';
 
-class ManageLibraryPage extends React.Component {
+export class ManageLibraryPage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -31,8 +31,25 @@ class ManageLibraryPage extends React.Component {
     return this.setState({book: book});
   }
 
+  bookFormIsValid() {
+    let formIsValid = true;
+    let errors = {};
+
+    if(this.state.book.title.length < 5) {
+      errors.title = 'Title must be at least 5 characters long';
+      formIsValid = false;
+    }
+    this.setState({errors: errors});
+    return formIsValid;
+  }
+
   saveBook(event) {
     event.preventDefault();
+
+    if(!this.bookFormIsValid()) {
+      return;
+    }
+
     this.setState({saving: true});
     this.props.actions.saveBook(this.state.book)
       .then(() => this.redirect())
