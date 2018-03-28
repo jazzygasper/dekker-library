@@ -9,6 +9,7 @@ const LibraryList = ({ library }) => {
           <th>Title</th>
           <th>Author</th>
           <th>Subject</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>

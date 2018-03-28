@@ -10,6 +10,7 @@ const BorrowBookForm = ({book, onSave, onChange, saving, errors}) => {
       </div>
       <div>
         <h2>{book.title}</h2>
+        <p>{book.author}</p>
         <p><strong>Subject: </strong>{book.subject}</p>
         <p><a href={book.amazonLink} target="_blank">Buy Online</a></p>
         <TextInput
