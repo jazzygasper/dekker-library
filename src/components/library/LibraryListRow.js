@@ -7,9 +7,6 @@ const LibraryListRow = ({ book }) => {
       <td><Link to={'/book/' + book.id}>{book.title}</Link></td>
       <td>{book.author}</td>
       <td>{book.subject}</td>
-      <td>{book.currentOwner}</td>
-      <td>{book.checkOutDate}</td>
-      <td><a href={book.amazonLink} target="_blank">Buy Online</a></td>
     </tr>
   );
 };

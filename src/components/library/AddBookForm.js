@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 
-const BookForm = ({book, onSave, onChange, saving, errors}) => {
+const AddBookForm = ({book, onSave, onChange, saving, errors}) => {
   return (
     <form>
       <h1>Add Book</h1>
@@ -57,7 +57,7 @@ const BookForm = ({book, onSave, onChange, saving, errors}) => {
   );
 };
 
-BookForm.propTypes = {
+AddBookForm.propTypes = {
   book: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
@@ -65,4 +65,4 @@ BookForm.propTypes = {
   errors: PropTypes.object
 };
 
-export default BookForm;
+export default AddBookForm;

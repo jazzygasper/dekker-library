@@ -11,10 +11,6 @@ class LibraryPage extends React.Component {
     this.redirectToAddBookPage = this.redirectToAddBookPage.bind(this);
   }
 
-  bookRow (book, index) {
-    return <div key={index}>{book.title}</div>;
-  }
-
   redirectToAddBookPage () {
     browserHistory.push('/book');
   }

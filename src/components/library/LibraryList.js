@@ -9,9 +9,6 @@ const LibraryList = ({ library }) => {
           <th>Title</th>
           <th>Author</th>
           <th>Subject</th>
-          <th>Current Owner</th>
-          <th>Check Out Date</th>
-          <th>Amazon Link</th>
         </tr>
       </thead>
       <tbody>

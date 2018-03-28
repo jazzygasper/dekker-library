@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as libraryActions from '../../actions/libraryActions';
-import BookForm from './BookForm';
+import AddBookForm from './AddBookForm';
+import BorrowBookForm from './BorrowBookForm';
 import toastr from 'toastr';
 
 export class ManageLibraryPage extends React.Component {
@@ -66,14 +67,27 @@ export class ManageLibraryPage extends React.Component {
   }
 
   render () {
+    const isBook = this.state.book.id;
     return (
-      <BookForm
+      <div>
+      {isBook ? (
+        <BorrowBookForm
         onChange={this.updateBookState}
         onSave={this.saveBook}
         book={this.state.book}
         errors={this.state.errors}
         saving={this.state.saving}
-      />
+        />
+      ) : (
+        <AddBookForm
+        onChange={this.updateBookState}
+        onSave={this.saveBook}
+        book={this.state.book}
+        errors={this.state.errors}
+        saving={this.state.saving}
+        />
+      )}
+      </div>
     );
   }
 }

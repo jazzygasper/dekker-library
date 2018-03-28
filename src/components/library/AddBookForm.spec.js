@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import BookForm from './BookForm';
+import AddBookForm from './AddBookForm';
 
 function setup(saving) {
   const props = {
@@ -10,10 +10,10 @@ function setup(saving) {
     onChange: () => {}
   };
 
-  return shallow(<BookForm {...props}/>);
+  return shallow(<AddBookForm {...props}/>);
 }
 
-describe('Book Form', () => {
+describe('Add Book Form', () => {
   it('renders form and h1', () => {
     const wrapper = setup(false);
     expect(wrapper.find('form').length).toBe(1);
