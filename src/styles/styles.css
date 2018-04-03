@@ -13,3 +13,18 @@ a.active {
 nav {
   padding-top: 20px;
 }
+
+.form__title {
+  padding-bottom: 20px;
+}
+
+.form__book-cover {
+  display: inline-grid;
+  vertical-align: top;
+}
+
+.form__book-details {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+}

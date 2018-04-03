@@ -12,7 +12,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "http://shop.oreilly.com/product/0636920033158.do",
-    image: "https://covers.oreillystatic.com/images/0636920033158/lrg.jpg"
+    coverUrl: "https://covers.oreillystatic.com/images/0636920033158/lrg.jpg"
   },
   {
     id: "cloud-native-java",
@@ -22,7 +22,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/d/cka/Cloud-Native-Java-Designing-Resilient-Systems-Foundry/1449374646",
-    image: "https://images-na.ssl-images-amazon.com/images/I/91Q6xp1Kd9L.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/91Q6xp1Kd9L.jpg"
   },
   {
     id: "gamestorming-playbook-for-innovators",
@@ -32,7 +32,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/Gamestorming-Playbook-Innovators-Rulebreakers-Changemakers/dp/0596804172/ref=sr_1_1?ie=UTF8&qid=1479812020&sr=8-1&keywords=gamestorming",
-    image: "https://images-na.ssl-images-amazon.com/images/I/81L1vjwc7oL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/81L1vjwc7oL.jpg"
   },
   {
     id: "getting-mean-with-mongo",
@@ -42,7 +42,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/Getting-MEAN-Mongo-Express-Angular/dp/1617292036/ref=pd_rhf_eetyp_s_cp_6?_encoding=UTF8&pd_rd_i=1617292036&pd_rd_r=EY8ZEPBAKW5JJR2Y0ZXG&pd_rd_w=JCiDS&pd_rd_wg=IBQvb&psc=1&refRID=EY8ZEPBAKW5JJR2Y0ZXG",
-    image: "https://images-na.ssl-images-amazon.com/images/I/81sPjexfGqL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/81sPjexfGqL.jpg"
   },
   {
     id: "high-Performance-javascript",
@@ -52,7 +52,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/Performance-JavaScript-Faster-Application-Interfaces/dp/059680279X",
-    image: "https://images-na.ssl-images-amazon.com/images/I/71yYbKXZqeL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/71yYbKXZqeL.jpg"
   },
   {
     id: "java-se-8-for-the-really-impatient",
@@ -62,7 +62,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.com/Java-SE8-Really-Impatient-Course/dp/0321927761",
-    image: "https://images-na.ssl-images-amazon.com/images/I/51okg3NkIgL._SX385_BO1,204,203,200_.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51okg3NkIgL._SX385_BO1,204,203,200_.jpg"
   },
   {
     id: "jira-7-admin",
@@ -72,7 +72,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/JIRA-7-Administration-Cookbook-Second/dp/1785888447/ref=sr_1_4?ie=UTF8&qbookId=1480323845&sr=8-4&keywords=jira",
-    image: "https://images-na.ssl-images-amazon.com/images/I/51Z38qA38hL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51Z38qA38hL.jpg"
   },
   {
     id: "jira-essentials-third-edition",
@@ -82,7 +82,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/JIRA-Essentials-Third-Patrick-Li-ebook/dp/B00WSUH7CO/ref=sr_1_1?ie=UTF8&qbookId=1480324064&sr=8-1&keywords=jira",
-    image: "https://images-eu.ssl-images-amazon.com/images/I/51z4na950bL.jpg"
+    coverUrl: "https://images-eu.ssl-images-amazon.com/images/I/51z4na950bL.jpg"
   },
   {
     id: "mastering-jira",
@@ -92,7 +92,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/Mastering-JIRA-Ravi-Sagar/dp/1784396516/ref=sr_1_8?ie=UTF8&qbookId=1480323845&sr=8-8&keywords=jira",
-    image: "https://images-na.ssl-images-amazon.com/images/I/81u8OgT5H7L.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/81u8OgT5H7L.jpg"
   },
   {
     id: "pheonix-project-1",
@@ -102,7 +102,7 @@ const library = [
     currentOwner: "Juan",
     checkOutDate: "02/03/2018",
     amazonLink: "https://www.amazon.co.uk/Phoenix-Project-DevOps-Helping-Business-ebook/dp/B00AZRBLHO",
-    images: "https://images-eu.ssl-images-amazon.com/images/I/5170sr05QAL.jpg"
+    coverUrl: "https://images-eu.ssl-images-amazon.com/images/I/5170sr05QAL.jpg"
   },
   {
     id: "phenoix-project-2",
@@ -112,7 +112,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/Phoenix-Project-DevOps-Helping-Business-ebook/dp/B00AZRBLHO",
-    image: "https://images-eu.ssl-images-amazon.com/images/I/5170sr05QAL.jpg"
+    coverUrl: "https://images-eu.ssl-images-amazon.com/images/I/5170sr05QAL.jpg"
   },
   {
     id: "release-it",
@@ -122,7 +122,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://pragprog.com/book/mnee/release-it",
-    image: "https://imagery.pragprog.com/products/93/mnee.jpg?1298589747"
+    coverUrl: "https://imagery.pragprog.com/products/93/mnee.jpg?1298589747"
   },
   {
     id: "ydnJS-async-performance",
@@ -132,7 +132,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/You-Dont-Know-JS-Performance/dp/1491904224/ref=sr_1_7?ie=UTF8&qbookId=1479475136&sr=8-7&keywords=you+don%27t+know+JS",
-    image: "https://images-na.ssl-images-amazon.com/images/I/51Kb27EcNPL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51Kb27EcNPL.jpg"
   },
   {
     id: "ydnJS-es6-beyond",
@@ -142,7 +142,7 @@ const library = [
     currentOwner: "Aydin",
     checkOutDate: "01/03/2018",
     amazonLink: "https://www.amazon.co.uk/You-Dont-Know-JS-Beyond/dp/1491904240/ref=sr_1_2?ie=UTF8&qbookId=1479475136&sr=8-2&keywords=you+don%27t+know+JS",
-    image: "https://images-na.ssl-images-amazon.com/images/I/41WeQ-Z4diL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/41WeQ-Z4diL.jpg"
   },
   {
     id: "ydnJS-scope-closures",
@@ -152,7 +152,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/You-Dont-Know-JS-Closures/dp/1449335586/ref=sr_1_3?ie=UTF8&qbookId=1479475136&sr=8-3&keywords=you+don%27t+know+JS",
-    image: "https://images-na.ssl-images-amazon.com/images/I/51SqAlfxJiL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51SqAlfxJiL.jpg"
   },
   {
     id: "ydnJS-this-object-prototypes",
@@ -162,7 +162,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/You-Dont-Know-JS-Prototypes/dp/1491904151/ref=sr_1_5?ie=UTF8&qbookId=1479475136&sr=8-5&keywords=you+don%27t+know+JS",
-    image: "https://images-na.ssl-images-amazon.com/images/I/41MZdroe73L.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/41MZdroe73L.jpg"
   },
   {
     id: "ydnJS-types-grammar",
@@ -172,7 +172,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/You-Dont-Know-JS-Grammar/dp/1491904194/ref=sr_1_6?ie=UTF8&qbookId=1479475136&sr=8-6&keywords=you+don%27t+know+JS",
-    images: "https://images-na.ssl-images-amazon.com/images/I/51AV-M7-u9L.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51AV-M7-u9L.jpg"
   },
   {
     id: "ydnJS-up-going",
@@ -182,7 +182,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/You-Dont-Know-JS-Going/dp/1491924462/ref=sr_1_1?ie=UTF8&qbookId=1479475136&sr=8-1&keywords=you+don%27t+know+JS",
-    image: "https://images-na.ssl-images-amazon.com/images/I/41FhogvNebL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/41FhogvNebL.jpg"
   },
   {
     id: "reactive-microservices-architecture",
@@ -192,7 +192,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "",
-    image: ""
+    coverUrl: ""
   },
   {
     id: "mind-hacks",
@@ -202,7 +202,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "http://shop.oreilly.com/product/9780596007799.do",
-    image: "https://covers.oreillystatic.com/images/9780596007799/lrg.jpg"
+    coverUrl: "https://covers.oreillystatic.com/images/9780596007799/lrg.jpg"
   },
   {
     id: "clean-code-handbook-angile-software-craftsmanship",
@@ -212,7 +212,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_2?ie=UTF8&qid=1501159080&sr=8-2&keywords=clean+code+robert+c+martin",
-    image: "https://images-na.ssl-images-amazon.com/images/I/71QQhJuMlPL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/71QQhJuMlPL.jpg"
   },
   {
     id: "startup-checklist",
@@ -222,7 +222,7 @@ const library = [
     currentOwner: "",
     checkOutDate: "",
     amazonLink: "https://www.amazon.co.uk/Startup-Checklist-Scalable-High-growth-Business/dp/111916379X",
-    image: "https://images-na.ssl-images-amazon.com/images/I/518s5giDAhL.jpg"
+    coverUrl: "https://images-na.ssl-images-amazon.com/images/I/518s5giDAhL.jpg"
   }
 ];
 

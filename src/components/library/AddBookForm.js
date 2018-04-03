@@ -40,12 +40,19 @@ const AddBookForm = ({book, onSave, onChange, saving, errors}) => {
           onChange={onChange}
           error={errors.checkOutDate}/>
 
-          <TextInput
-            name="amazonLink"
-            label="Amazon Link"
-            value={book.amazonLink}
-            onChange={onChange}
-            error={errors.amazonLink}/>
+        <TextInput
+          name="amazonLink"
+          label="Amazon Link"
+          value={book.amazonLink}
+          onChange={onChange}
+          error={errors.amazonLink}/>
+
+        <TextInput
+          name="cover"
+          label="Book Cover URL"
+          value={book.coverUrl}
+          onChange={onChange}
+          error={errors.coverUrl}/>
 
       <input
         type="submit"

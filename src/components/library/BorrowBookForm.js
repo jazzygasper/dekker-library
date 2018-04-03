@@ -4,11 +4,11 @@ import TextInput from '../common/TextInput';
 const BorrowBookForm = ({book, onSave, onChange, saving, errors}) => {
   return (
     <form>
-      <h1>Borrow Book</h1>
-      <div>
-        <img src={book.image} alt="book cover" width="300px"/>
+      <h1 className="form__title">Borrow Book</h1>
+      <div className="form__book-cover">
+        <img src={book.coverUrl} alt="book cover" width="300px"/>
       </div>
-      <div>
+      <div className="form__book-details">
         <h2>{book.title}</h2>
         <p>{book.author}</p>
         <p><strong>Subject: </strong>{book.subject}</p>
