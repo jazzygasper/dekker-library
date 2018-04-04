@@ -95,8 +95,8 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/81u8OgT5H7L.jpg"
   },
   {
-    id: "pheonix-project-1",
-    title: "Pheonix Project",
+    id: "phoenix-project-1",
+    title: "Phoenix Project",
     author: "Gene Kim",
     subject: "DevOps",
     currentOwner: "Juan",
@@ -105,8 +105,8 @@ const library = [
     coverUrl: "https://images-eu.ssl-images-amazon.com/images/I/5170sr05QAL.jpg"
   },
   {
-    id: "phenoix-project-2",
-    title: "Pheonix Project",
+    id: "phoenix-project-2",
+    title: "Phoenix Project",
     author: "Gene Kim",
     subject: "DevOps",
     currentOwner: "",

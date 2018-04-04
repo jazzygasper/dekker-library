@@ -67,7 +67,8 @@ export class ManageLibraryPage extends React.Component {
   }
 
   render () {
-    const isBook = this.state.book.id;
+    console.log(this.state);
+    const isBook = this.state.book.bookId;
     return (
       <div>
       {isBook ? (
@@ -102,14 +103,13 @@ ManageLibraryPage.contextTypes = {
 };
 
 function getBookById(library, id) {
-  const book = library.filter(book => book.id == id);
+  const book = library.filter(book => book.bookId == id);
   if (book.length) return book[0];
-  return null;
 }
 
 function mapStateToProps(state, ownProps) {
   const bookId = ownProps.params.id; //from path '/book/:id'
-  let book = {id: '', title: '', author: '', subject: '', currentOwner: '', checkOutDate: '', amazonLink: ''};
+  let book = {bookId: '', title: '', author: '', subject: '', currentOwner: '', checkOutDate: '', amazonLink: ''};
 
   if(bookId && state.library.length > 0) {
     book = getBookById(state.library, bookId);
