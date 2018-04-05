@@ -21,16 +21,16 @@ describe('Library Reducer', () => {
 
   it('should update book when passed UPDATE_BOOK_SUCCESS', () => {
     const initialState = [
-      {id: 'A', title: 'Building Microservices'},
-      {id: 'B', title: 'Cloud Native Java'},
-      {id: 'C', title: 'High Performance Javascript'}
+      {bookId: 'A', title: 'Building Microservices'},
+      {bookId: 'B', title: 'Cloud Native Java'},
+      {bookId: 'C', title: 'High Performance Javascript'}
     ];
-    const bookUpdate = {id: 'B', title: 'Mastering JIRA'};
+    const bookUpdate = {bookId: 'B', title: 'Mastering JIRA'};
     const action = actions.updateBookSuccess(bookUpdate);
 
     const newState = libraryReducer(initialState, action);
-    const updatedBook = newState.find(a => a.id == bookUpdate.id);
-    const untouchedBook = newState.find(a => a.id == 'A');
+    const updatedBook = newState.find(a => a.bookId == bookUpdate.bookId);
+    const untouchedBook = newState.find(a => a.bookId == 'A');
 
     expect(newState.length).toEqual(3);
     expect(updatedBook.title).toEqual('Mastering JIRA');

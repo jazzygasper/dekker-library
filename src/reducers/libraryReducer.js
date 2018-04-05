@@ -14,7 +14,7 @@ export default function libraryReducer(state = initialState.library, action) {
 
     case types.UPDATE_BOOK_SUCCESS:
       return [
-        ...state.filter(book => book.id !== action.book.id),
+        ...state.filter(book => book.bookId !== action.book.bookId),
         Object.assign({}, action.book)
       ];
 

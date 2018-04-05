@@ -5,7 +5,7 @@ import delay from './delay';
 // All calls return promises.
 const library = [
   {
-    id: "building-microservices",
+    bookId: "building-microservices",
     title: "Building Microservices",
     author: "Sam Newman",
     subject: "Microservices",
@@ -15,7 +15,7 @@ const library = [
     coverUrl: "https://covers.oreillystatic.com/images/0636920033158/lrg.jpg"
   },
   {
-    id: "cloud-native-java",
+    bookId: "cloud-native-java",
     title: "Cloud Native Java",
     author: "Josh Long",
     subject: "Java 8/9",
@@ -25,7 +25,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/91Q6xp1Kd9L.jpg"
   },
   {
-    id: "gamestorming-playbook-for-innovators",
+    bookId: "gamestorming-playbook-for-innovators",
     title: "Gamestorming: A playbook for innovators",
     author: "Dave Gray",
     subject: "Analysis Skills",
@@ -35,7 +35,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/81L1vjwc7oL.jpg"
   },
   {
-    id: "getting-mean-with-mongo",
+    bookId: "getting-mean-with-mongo",
     title: "Getting MEAN with Mongo, Express, Angular, and Node",
     author: "Simon Holmes",
     subject: "JavaScript",
@@ -45,7 +45,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/81sPjexfGqL.jpg"
   },
   {
-    id: "high-Performance-javascript",
+    bookId: "high-Performance-javascript",
     title: "High Performance Javascript",
     author: "Nichoals Zakas",
     subject: "JavaScript",
@@ -55,7 +55,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/71yYbKXZqeL.jpg"
   },
   {
-    id: "java-se-8-for-the-really-impatient",
+    bookId: "java-se-8-for-the-really-impatient",
     title: "Java SE 8 for the Really Impatient",
     author: "Cay S. Horstmann",
     subject: "Java 8",
@@ -65,7 +65,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51okg3NkIgL._SX385_BO1,204,203,200_.jpg"
   },
   {
-    id: "jira-7-admin",
+    bookId: "jira-7-admin",
     title: "JIRA 7 Administration Cookbook",
     author: "Patrick Li",
     subject: "JIRA",
@@ -75,7 +75,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51Z38qA38hL.jpg"
   },
   {
-    id: "jira-essentials-third-edition",
+    bookId: "jira-essentials-third-edition",
     title: "JIRA Essentials - Third Edition",
     author: "Patrick Li",
     subject: "JIRA",
@@ -85,7 +85,7 @@ const library = [
     coverUrl: "https://images-eu.ssl-images-amazon.com/images/I/51z4na950bL.jpg"
   },
   {
-    id: "mastering-jira",
+    bookId: "mastering-jira",
     title: "Mastering JIRA",
     author: "Ravi Sagar",
     subject: "JIRA",
@@ -95,7 +95,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/81u8OgT5H7L.jpg"
   },
   {
-    id: "phoenix-project-1",
+    bookId: "phoenix-project-1",
     title: "Phoenix Project",
     author: "Gene Kim",
     subject: "DevOps",
@@ -105,7 +105,7 @@ const library = [
     coverUrl: "https://images-eu.ssl-images-amazon.com/images/I/5170sr05QAL.jpg"
   },
   {
-    id: "phoenix-project-2",
+    bookId: "phoenix-project-2",
     title: "Phoenix Project",
     author: "Gene Kim",
     subject: "DevOps",
@@ -115,7 +115,7 @@ const library = [
     coverUrl: "https://images-eu.ssl-images-amazon.com/images/I/5170sr05QAL.jpg"
   },
   {
-    id: "release-it",
+    bookId: "release-it",
     title: "Release it!",
     author: "Michael T. Nygard",
     subject: "Release / scale systems",
@@ -125,7 +125,7 @@ const library = [
     coverUrl: "https://imagery.pragprog.com/products/93/mnee.jpg?1298589747"
   },
   {
-    id: "ydnJS-async-performance",
+    bookId: "ydnJS-async-performance",
     title: "You Don't Know JS: Async & Performance",
     author: "Kyle Simpson",
     subject: "JavaScript",
@@ -135,7 +135,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51Kb27EcNPL.jpg"
   },
   {
-    id: "ydnJS-es6-beyond",
+    bookId: "ydnJS-es6-beyond",
     title: "You Don't Know JS: ES6 & Beyond",
     author: "Kyle Simpson",
     subject: "JavaScript",
@@ -145,7 +145,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/41WeQ-Z4diL.jpg"
   },
   {
-    id: "ydnJS-scope-closures",
+    bookId: "ydnJS-scope-closures",
     title: "You Don't Know JS: Scope & Closures",
     author: "Kyle Simpson",
     subject: "JavaScript",
@@ -155,7 +155,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51SqAlfxJiL.jpg"
   },
   {
-    id: "ydnJS-this-object-prototypes",
+    bookId: "ydnJS-this-object-prototypes",
     title: "You Don't Know JS: this & Object Prototypes",
     author: "Kyle Simpson",
     subject: "JavaScript",
@@ -165,7 +165,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/41MZdroe73L.jpg"
   },
   {
-    id: "ydnJS-types-grammar",
+    bookId: "ydnJS-types-grammar",
     title: "You Don't Know JS: Types & Grammar",
     author: "Kyle Simpson",
     subject: "JavaScript",
@@ -175,7 +175,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/51AV-M7-u9L.jpg"
   },
   {
-    id: "ydnJS-up-going",
+    bookId: "ydnJS-up-going",
     title: "You Don't Know JS: Up & Going",
     author: "Kyle Simpson",
     subject: "JavaScript",
@@ -185,7 +185,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/41FhogvNebL.jpg"
   },
   {
-    id: "reactive-microservices-architecture",
+    bookId: "reactive-microservices-architecture",
     title: "Reactive Microservices Architecture",
     author: "Jonas Bońer",
     subject: "Microservices",
@@ -195,7 +195,7 @@ const library = [
     coverUrl: ""
   },
   {
-    id: "mind-hacks",
+    bookId: "mind-hacks",
     title: "Mind Hacks",
     author: "Tom Stanford & Matt Webb",
     subject: "Soft Skills",
@@ -205,7 +205,7 @@ const library = [
     coverUrl: "https://covers.oreillystatic.com/images/9780596007799/lrg.jpg"
   },
   {
-    id: "clean-code-handbook-angile-software-craftsmanship",
+    bookId: "clean-code-handbook-angile-software-craftsmanship",
     title: "Clean Code: A Handbook of Agile Software Craftsmanship",
     author: "Robert C. Martin",
     subject: "Software Development",
@@ -215,7 +215,7 @@ const library = [
     coverUrl: "https://images-na.ssl-images-amazon.com/images/I/71QQhJuMlPL.jpg"
   },
   {
-    id: "startup-checklist",
+    bookId: "startup-checklist",
     title: "The Startup Checklist",
     author: "David S. Rose",
     subject: "Business/Product",

@@ -20,7 +20,7 @@ export class ManageLibraryPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.book.id !== nextProps.book.id) {
+    if(this.props.book.bookId !== nextProps.book.bookId) {
       this.setState({book: Object.assign({}, nextProps.book)});
     }
   }
@@ -67,7 +67,6 @@ export class ManageLibraryPage extends React.Component {
   }
 
   render () {
-    console.log(this.state);
     const isBook = this.state.book.bookId;
     return (
       <div>
@@ -108,7 +107,7 @@ function getBookById(library, id) {
 }
 
 function mapStateToProps(state, ownProps) {
-  const bookId = ownProps.params.id; //from path '/book/:id'
+  const bookId = ownProps.params.bookId; //from path '/book/:id'
   let book = {bookId: '', title: '', author: '', subject: '', currentOwner: '', checkOutDate: '', amazonLink: ''};
 
   if(bookId && state.library.length > 0) {

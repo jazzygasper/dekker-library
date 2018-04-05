@@ -33,8 +33,16 @@ export function loadLibrary() {
 export function saveBook(book) {
   return function(dispatch, getState) {
     dispatch(beginAjaxCall());
-    return libraryApi.saveBook(book).then(savedBook => {
-      book.id ? dispatch(updateBookSuccess(savedBook)) : dispatch(createBookSuccess(savedBook));
+    return fetch(baseUrl+"/api/book", {
+      method: 'POST',
+      headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(book)
+    })
+    .then(savedBook => {
+      book.bookId ? dispatch(updateBookSuccess(savedBook)) : dispatch(createBookSuccess(savedBook));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);

@@ -48,7 +48,7 @@ const AddBookForm = ({book, onSave, onChange, saving, errors}) => {
           error={errors.amazonLink}/>
 
         <TextInput
-          name="cover"
+          name="coverUrl"
           label="Book Cover URL"
           value={book.coverUrl}
           onChange={onChange}
