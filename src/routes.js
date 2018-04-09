@@ -11,7 +11,7 @@ export default (
     <IndexRoute component={HomePage} />
     <Route path="library" component={LibraryPage} />
     <Route path="book" component={ManageLibraryPage} />
-    <Route path="book/:id" component={ManageLibraryPage} />
+    <Route path="book/:bookId" component={ManageLibraryPage} />
     <Route path="about" component={AboutPage} />
   </Route>
 );

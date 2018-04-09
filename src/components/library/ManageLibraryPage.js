@@ -13,10 +13,12 @@ export class ManageLibraryPage extends React.Component {
     this.state = {
       book: Object.assign({}, this.props.book),
       errors: {},
-      saving: false
+      saving: false,
+      updating: false
     };
     this.updateBookState = this.updateBookState.bind(this);
     this.saveBook = this.saveBook.bind(this);
+    this.updateBook = this.updateBook.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -50,7 +52,6 @@ export class ManageLibraryPage extends React.Component {
     if(!this.bookFormIsValid()) {
       return;
     }
-
     this.setState({saving: true});
     this.props.actions.saveBook(this.state.book)
       .then(() => this.redirect())
@@ -60,8 +61,24 @@ export class ManageLibraryPage extends React.Component {
       });
   }
 
+  updateBook(event) {
+    event.preventDefault();
+
+    if(!this.bookFormIsValid()) {
+      return;
+    }
+    this.setState({updating: true});
+    this.props.actions.updateBook(this.state.book)
+      .then(() => this.redirect())
+      .catch(error => {
+        toastr.error(error);
+        this.setState({updating: false});
+      });
+  }
+
   redirect() {
     this.setState({saving: false});
+    this.setState({updating: false});
     toastr.success('Book Saved');
     this.context.router.push('/library');
   }
@@ -73,10 +90,10 @@ export class ManageLibraryPage extends React.Component {
       {isBook ? (
         <BorrowBookForm
         onChange={this.updateBookState}
-        onSave={this.saveBook}
+        onSave={this.updateBook}
         book={this.state.book}
         errors={this.state.errors}
-        saving={this.state.saving}
+        updating={this.state.updating}
         />
       ) : (
         <AddBookForm
@@ -108,7 +125,7 @@ function getBookById(library, id) {
 
 function mapStateToProps(state, ownProps) {
   const bookId = ownProps.params.bookId; //from path '/book/:id'
-  let book = {bookId: '', title: '', author: '', subject: '', currentOwner: '', checkOutDate: '', amazonLink: ''};
+  let book = {bookId: '', title: '', author: '', subject: '', currentOwner: '', checkOutDate: '', amazonLink: '', coverUrl: ''};
 
   if(bookId && state.library.length > 0) {
     book = getBookById(state.library, bookId);

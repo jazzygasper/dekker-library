@@ -27,13 +27,13 @@ const mockStore = configureMockStore(middleware);
 
 describe('Async Actions', () => {
   afterEach(() => {
-    fetchMock.reset()
-    fetchMock.restore()
+    fetchMock.reset();
+    fetchMock.restore();
   });
 
   it('should create BEGIN_AJAX_CALL and LOAD_LIBRARY_SUCCESS when loading library', (done) => {
     fetchMock
-      .getOnce('http://localhost:8000/api/library', { body: { library: [{bookId: 'clean-code', title: 'Clean Code'}] }
+      .getOnce('http://localhost:8000/library', { body: { library: [{bookId: 'clean-code', title: 'Clean Code'}] }
     })
     .catch(error => {
       throw(error);

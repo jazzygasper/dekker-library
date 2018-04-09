@@ -19,7 +19,7 @@ export function updateBookSuccess(book) {
 export function loadLibrary() {
   return function(dispatch) {
     dispatch(beginAjaxCall());
-    return fetch(baseUrl+"/api/library")
+    return fetch(baseUrl+"/library")
       .then(response => {
         return response.json();
     }).then(library => {
@@ -33,16 +33,36 @@ export function loadLibrary() {
 export function saveBook(book) {
   return function(dispatch, getState) {
     dispatch(beginAjaxCall());
-    return fetch(baseUrl+"/api/book", {
+    return fetch(baseUrl+"/book", {
       method: 'POST',
       headers: {
        'Accept': 'application/json',
-       'Content-Type': 'application/json',
+       'Content-Type': 'application/json'
       },
       body: JSON.stringify(book)
     })
     .then(savedBook => {
-      book.bookId ? dispatch(updateBookSuccess(savedBook)) : dispatch(createBookSuccess(savedBook));
+      dispatch(createBookSuccess(savedBook));
+    }).catch(error => {
+      dispatch(ajaxCallError(error));
+      throw(error);
+    });
+  };
+}
+
+export function updateBook(book) {
+  return function(dispatch, getState) {
+    dispatch(beginAjaxCall());
+    return fetch(baseUrl+"/book/" + book.bookId, {
+      method: 'PUT',
+      headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(book)
+    })
+    .then(savedBook => {
+      dispatch(updateBookSuccess(savedBook));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);
