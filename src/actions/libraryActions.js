@@ -1,8 +1,11 @@
 import * as types from './actionTypes';
-import libraryApi from '../api/mockLibraryApi';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 const baseUrl = "http://localhost:8000";
+const headers = {
+   'Accept': 'application/json',
+   'Content-Type': 'application/json'
+  };
 
 export function loadLibrarySuccess(library) {
   return { type: types.LOAD_LIBRARY_SUCCESS, library };
@@ -35,10 +38,7 @@ export function saveBook(book) {
     dispatch(beginAjaxCall());
     return fetch(baseUrl+"/book", {
       method: 'POST',
-      headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json'
-      },
+      headers: headers,
       body: JSON.stringify(book)
     })
     .then(savedBook => {
@@ -55,10 +55,7 @@ export function updateBook(book) {
     dispatch(beginAjaxCall());
     return fetch(baseUrl+"/book/" + book.bookId, {
       method: 'PUT',
-      headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json'
-      },
+      headers: headers,
       body: JSON.stringify(book)
     })
     .then(savedBook => {

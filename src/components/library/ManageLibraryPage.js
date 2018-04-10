@@ -38,8 +38,8 @@ export class ManageLibraryPage extends React.Component {
     let formIsValid = true;
     let errors = {};
 
-    if(this.state.book.title.length < 5) {
-      errors.title = 'Title must be at least 5 characters long';
+    if(this.state.book.title.length < 1) {
+      errors.title = 'Books must have a title';
       formIsValid = false;
     }
     this.setState({errors: errors});
@@ -79,8 +79,8 @@ export class ManageLibraryPage extends React.Component {
   redirect() {
     this.setState({saving: false});
     this.setState({updating: false});
-    toastr.success('Book Saved');
     this.context.router.push('/library');
+    toastr.success('Book Saved');
   }
 
   render () {
