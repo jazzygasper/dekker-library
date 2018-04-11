@@ -23,7 +23,7 @@ export class ManageLibraryPage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if(this.props.book.bookId !== nextProps.book.bookId) {
-      this.setState({book: Object.assign({}, nextProps.book)});
+      // this.setState({book: Object.assign({}, nextProps.book)});
     }
   }
 
@@ -53,6 +53,7 @@ export class ManageLibraryPage extends React.Component {
       return;
     }
     this.setState({updating: true});
+    console.log(this.state.book);
     this.props.actions.saveBook(this.state.book)
       .then(() => this.redirect())
       .catch(error => {
@@ -93,7 +94,7 @@ export class ManageLibraryPage extends React.Component {
 
   redirect() {
     this.setState({updating: false});
-    this.context.router.push('/library');
+    // this.context.router.push('/library');
     toastr.success('Book Saved');
   }
 

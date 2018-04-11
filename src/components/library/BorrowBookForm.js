@@ -19,12 +19,12 @@ const BorrowBookForm = ({book, onSave, onDelete, onChange, updating, errors}) =>
           value={book.currentOwner}
           onChange={onChange}
           error={errors.currentOwner}/>
-          <TextInput
-            name="checkOutDate"
-            label="Check Out Date"
-            value={book.checkOutDate}
-            onChange={onChange}
-            error={errors.checkOutDate}/>
+        <TextInput
+          name="checkOutDate"
+          label="Check Out Date"
+          value={book.checkOutDate}
+          onChange={onChange}
+          error={errors.checkOutDate}/>
         <input
           type="submit"
           disabled={updating}

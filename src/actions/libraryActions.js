@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
+import { push } from 'react-router-redux';
 
 const baseUrl = "http://localhost:8000";
 const headers = {
@@ -47,6 +48,7 @@ export function saveBook(book) {
     })
     .then(savedBook => {
       dispatch(createBookSuccess(savedBook));
+      dispatch(push('/library'));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);
@@ -64,6 +66,7 @@ export function updateBook(book) {
     })
     .then(savedBook => {
       dispatch(updateBookSuccess(savedBook));
+      dispatch(push('/library'));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);
