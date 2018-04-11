@@ -3,9 +3,9 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import AddBookForm from './AddBookForm';
 
-function setup(saving) {
+function setup(updating) {
   const props = {
-    book: {}, saving: saving, errors: {},
+    book: {}, updating: updating, errors: {},
     onSave: () => {},
     onChange: () => {}
   };

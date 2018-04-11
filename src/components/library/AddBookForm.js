@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 
-const AddBookForm = ({book, onSave, onChange, saving, errors}) => {
+const AddBookForm = ({book, onSave, onChange, updating, errors}) => {
   return (
     <form>
       <h1>Add Book</h1>
@@ -56,8 +56,8 @@ const AddBookForm = ({book, onSave, onChange, saving, errors}) => {
 
       <input
         type="submit"
-        disabled={saving}
-        value={saving ? 'Saving...' : 'Save'}
+        disabled={updating}
+        value={updating ? 'Saving...' : 'Save'}
         className="btn btn-primary"
         onClick={onSave}/>
     </form>
@@ -68,7 +68,7 @@ AddBookForm.propTypes = {
   book: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  saving: PropTypes.bool,
+  updating: PropTypes.bool,
   errors: PropTypes.object
 };
 

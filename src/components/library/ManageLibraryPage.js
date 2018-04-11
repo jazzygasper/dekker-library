@@ -13,12 +13,12 @@ export class ManageLibraryPage extends React.Component {
     this.state = {
       book: Object.assign({}, this.props.book),
       errors: {},
-      saving: false,
       updating: false
     };
     this.updateBookState = this.updateBookState.bind(this);
     this.saveBook = this.saveBook.bind(this);
     this.updateBook = this.updateBook.bind(this);
+    this.deleteBook = this.deleteBook.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,12 +52,12 @@ export class ManageLibraryPage extends React.Component {
     if(!this.bookFormIsValid()) {
       return;
     }
-    this.setState({saving: true});
+    this.setState({updating: true});
     this.props.actions.saveBook(this.state.book)
       .then(() => this.redirect())
       .catch(error => {
         toastr.error(error);
-        this.setState({saving: false});
+        this.setState({updating: false});
       });
   }
 
@@ -76,8 +76,22 @@ export class ManageLibraryPage extends React.Component {
       });
   }
 
+  deleteBook(event) {
+    event.preventDefault();
+
+    if(!this.bookFormIsValid()) {
+      return;
+    }
+    this.setState({updating: true});
+    this.props.actions.deleteBook(this.state.book)
+      .then(() => this.redirect())
+      .catch(error => {
+        toastr.error(error);
+        this.setState({updating: false});
+      });
+  }
+
   redirect() {
-    this.setState({saving: false});
     this.setState({updating: false});
     this.context.router.push('/library');
     toastr.success('Book Saved');
@@ -91,6 +105,7 @@ export class ManageLibraryPage extends React.Component {
         <BorrowBookForm
         onChange={this.updateBookState}
         onSave={this.updateBook}
+        onDelete={this.deleteBook}
         book={this.state.book}
         errors={this.state.errors}
         updating={this.state.updating}
@@ -101,7 +116,7 @@ export class ManageLibraryPage extends React.Component {
         onSave={this.saveBook}
         book={this.state.book}
         errors={this.state.errors}
-        saving={this.state.saving}
+        updating={this.state.updating}
         />
       )}
       </div>

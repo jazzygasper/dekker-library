@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 
-const BorrowBookForm = ({book, onSave, onChange, saving, errors}) => {
+const BorrowBookForm = ({book, onSave, onDelete, onChange, updating, errors}) => {
   return (
     <form>
       <h1 className="form__title">Borrow Book</h1>
@@ -27,10 +27,16 @@ const BorrowBookForm = ({book, onSave, onChange, saving, errors}) => {
             error={errors.checkOutDate}/>
         <input
           type="submit"
-          disabled={saving}
-          value={saving ? 'Saving...' : 'Save'}
+          disabled={updating}
+          value={updating ? 'Saving...' : 'Save'}
           className="btn btn-primary"
           onClick={onSave}/>
+        <input
+          type="submit"
+          disabled={updating}
+          value={updating ? 'Deleting...' : 'Delete Book'}
+          className="btn btn-primary"
+          onClick={onDelete}/>
       </div>
     </form>
   );
@@ -39,8 +45,9 @@ const BorrowBookForm = ({book, onSave, onChange, saving, errors}) => {
 BorrowBookForm.propTypes = {
   book: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  saving: PropTypes.bool,
+  updating: PropTypes.bool,
   errors: PropTypes.object
 };
 
