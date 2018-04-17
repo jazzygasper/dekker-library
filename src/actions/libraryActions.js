@@ -46,7 +46,9 @@ export function saveBook(book) {
       body: JSON.stringify(book)
     })
     .then(savedBook => {
-      dispatch(createBookSuccess(savedBook));
+      return savedBook.json();
+    }).then(book => {
+      dispatch(createBookSuccess(book));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);
@@ -63,7 +65,9 @@ export function updateBook(book) {
       body: JSON.stringify(book)
     })
     .then(savedBook => {
-      dispatch(updateBookSuccess(savedBook));
+      return savedBook.json();
+    }).then(book => {
+      dispatch(updateBookSuccess(book));
     }).catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);
@@ -78,10 +82,14 @@ export function deleteBook(book) {
       method: 'DELETE'
     })
     .then(deletedBook => {
-      dispatch(deleteBookSuccess(deletedBook));
-    }).catch(error => {
+      return deletedBook.json();
+    }).then(jsonBook => {
+      dispatch(deleteBookSuccess(book));
+    })
+    .catch(error => {
       dispatch(ajaxCallError(error));
       throw(error);
     });
+
   };
 }

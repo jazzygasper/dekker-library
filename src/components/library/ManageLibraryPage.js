@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as libraryActions from '../../actions/libraryActions';
@@ -84,7 +85,10 @@ export class ManageLibraryPage extends React.Component {
     }
     this.setState({updating: true});
     this.props.actions.deleteBook(this.state.book)
-      .then(() => this.redirect())
+      .then(() => {
+        this.props.actions.loadLibrary();
+        return this.redirect();
+      })
       .catch(error => {
         toastr.error(error);
         this.setState({updating: false});

@@ -19,10 +19,7 @@ export default function libraryReducer(state = initialState.library, action) {
       ];
 
     case types.DELETE_BOOK_SUCCESS:
-      return [
-        ...state,
-        Object.assign({}, action.book)
-      ];
+      return state;
 
     default:
       return state;

@@ -1,6 +1,7 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Header from './common/Header';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 class App extends React.Component {
   render () {
