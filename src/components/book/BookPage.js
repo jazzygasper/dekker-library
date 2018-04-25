@@ -9,7 +9,7 @@ import toastr from 'toastr';
 class BookPage extends React.Component {
   constructor(props, context) {
     super(props, context);
-    
+
     this.state = {
       book: Object.assign({}, this.props.book),
       errors: {},
@@ -22,7 +22,7 @@ class BookPage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if(this.props.book.bookId !== nextProps.book.bookId) {
-      this.setState({book: Object.assign({}, nextProps.book)});
+      // this.setState({book: Object.assign({}, nextProps.book)});
     }
   }
 
