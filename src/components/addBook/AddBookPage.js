@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as libraryActions from '../../actions/libraryActions';
 import AddBookForm from './AddBookForm';
-import BorrowBookForm from './BorrowBookForm';
 import toastr from 'toastr';
 
-export class ManageLibraryPage extends React.Component {
+class AddBookPage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -18,14 +17,6 @@ export class ManageLibraryPage extends React.Component {
     };
     this.updateBookState = this.updateBookState.bind(this);
     this.saveBook = this.saveBook.bind(this);
-    this.updateBook = this.updateBook.bind(this);
-    this.deleteBook = this.deleteBook.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if(this.props.book.bookId !== nextProps.book.bookId) {
-      this.setState({book: Object.assign({}, nextProps.book)});
-    }
   }
 
   updateBookState(event) {
@@ -62,39 +53,6 @@ export class ManageLibraryPage extends React.Component {
       });
   }
 
-  updateBook(event) {
-    event.preventDefault();
-
-    if(!this.bookFormIsValid()) {
-      return;
-    }
-    this.setState({updating: true});
-    this.props.actions.updateBook(this.state.book)
-      .then(() => this.redirect())
-      .catch(error => {
-        toastr.error(error);
-        this.setState({updating: false});
-      });
-  }
-
-  deleteBook(event) {
-    event.preventDefault();
-
-    if(!this.bookFormIsValid()) {
-      return;
-    }
-    this.setState({updating: true});
-    this.props.actions.deleteBook(this.state.book)
-      .then(() => {
-        this.props.actions.loadLibrary();
-        return this.redirect();
-      })
-      .catch(error => {
-        toastr.error(error);
-        this.setState({updating: false});
-      });
-  }
-
   redirect() {
     this.setState({updating: false});
     this.context.router.push('/library');
@@ -102,19 +60,8 @@ export class ManageLibraryPage extends React.Component {
   }
 
   render () {
-    const isBook = this.state.book.bookId;
     return (
       <div>
-      {isBook ? (
-        <BorrowBookForm
-        onChange={this.updateBookState}
-        onSave={this.updateBook}
-        onDelete={this.deleteBook}
-        book={this.state.book}
-        errors={this.state.errors}
-        updating={this.state.updating}
-        />
-      ) : (
         <AddBookForm
         onChange={this.updateBookState}
         onSave={this.saveBook}
@@ -122,33 +69,22 @@ export class ManageLibraryPage extends React.Component {
         errors={this.state.errors}
         updating={this.state.updating}
         />
-      )}
       </div>
     );
   }
 }
 
-ManageLibraryPage.propTypes = {
+AddBookPage.propTypes = {
   book: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 
-ManageLibraryPage.contextTypes = {
+AddBookPage.contextTypes = {
   router: PropTypes.object
 };
 
-function getBookById(library, id) {
-  const book = library.filter(book => book.bookId == id);
-  if (book.length) return book[0];
-}
-
 function mapStateToProps(state, ownProps) {
-  const bookId = ownProps.params.bookId; //from path '/book/:id'
   let book = {bookId: '', title: '', author: '', subject: '', currentOwner: '', checkOutDate: '', amazonLink: '', coverUrl: ''};
-
-  if(bookId && state.library.length > 0) {
-    book = getBookById(state.library, bookId);
-  }
 
   return {
     book: book
@@ -161,4 +97,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageLibraryPage);
+export default connect(mapStateToProps, mapDispatchToProps)(AddBookPage);

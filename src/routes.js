@@ -4,14 +4,15 @@ import App from './components/App';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import LibraryPage from './components/library/LibraryPage';
-import ManageLibraryPage from './components/library/ManageLibraryPage'; //eslint-disable-line import/no-named-as-default
+import AddBookPage from './components/addBook/AddBookPage';
+import BookPage from './components/book/BookPage';
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
     <Route path="library" component={LibraryPage} />
-    <Route path="book" component={ManageLibraryPage} />
-    <Route path="book/:bookId" component={ManageLibraryPage} />
+    <Route path="add-book" component={AddBookPage} />
+    <Route path="book/:bookId" component={BookPage} />
     <Route path="about" component={AboutPage} />
   </Route>
 );

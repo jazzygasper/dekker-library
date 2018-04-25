@@ -13,7 +13,7 @@ class LibraryPage extends React.Component {
   }
 
   redirectToAddBookPage () {
-    browserHistory.push('/book');
+    browserHistory.push('/add-book');
   }
 
   render () {
