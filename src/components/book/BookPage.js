@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import BorrowBookForm from './BorrowBookForm';
 import * as libraryActions from '../../actions/libraryActions';
 import toastr from 'toastr';
+import moment from 'moment';
 
 class BookPage extends React.Component {
   constructor(props, context) {
@@ -17,12 +18,13 @@ class BookPage extends React.Component {
     };
     this.updateBookState = this.updateBookState.bind(this);
     this.updateBook = this.updateBook.bind(this);
+    // this.returnBook = this.returnBook.bind(this);
     this.deleteBook = this.deleteBook.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.book.bookId !== nextProps.book.bookId) {
-      // this.setState({book: Object.assign({}, nextProps.book)});
+      this.setState({book: Object.assign({}, nextProps.book)});
     }
   }
 
@@ -37,8 +39,8 @@ class BookPage extends React.Component {
     let formIsValid = true;
     let errors = {};
 
-    if(this.state.book.title.length < 1) {
-      errors.title = 'Books must have a title';
+    if(this.state.book.currentOwner.length < 1) {
+      errors.currentOwner = 'Please provide your name to borrow book';
       formIsValid = false;
     }
     this.setState({errors: errors});
@@ -51,14 +53,35 @@ class BookPage extends React.Component {
     if(!this.bookFormIsValid()) {
       return;
     }
+    const book = Object.assign({}, this.state.book);
+
+    if(this.state.book.currentOwner) {
+      let dateNextMonth = moment().add(1, 'months').format("dddd, MMMM Do YYYY");
+      book.checkOutDate = dateNextMonth;
+    }
     this.setState({updating: true});
-    this.props.actions.updateBook(this.state.book)
+    this.props.actions.updateBook(book)
       .then(() => this.redirect())
       .catch(error => {
         toastr.error(error);
         this.setState({updating: false});
       });
   }
+
+  // returnBook(event) {
+  //   event.preventDefault();
+  //
+  //   this.state.book.currentOwner = '';
+  //   this.state.book.checkOutDate = '';
+  //
+  //   this.setState({updating: true});
+  //   this.props.actions.updateBook(this.state.book)
+  //     .then(() => this.redirect())
+  //     .catch(error => {
+  //       toastr.error(error);
+  //       this.setState({updating: false});
+  //     });
+  // }
 
   deleteBook(event) {
     event.preventDefault();
@@ -91,6 +114,7 @@ class BookPage extends React.Component {
         <BorrowBookForm
         onChange={this.updateBookState}
         onSave={this.updateBook}
+        onReturn={this.returnBook}
         onDelete={this.deleteBook}
         book={this.state.book}
         errors={this.state.errors}

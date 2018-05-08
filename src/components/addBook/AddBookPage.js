@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import * as libraryActions from '../../actions/libraryActions';
 import AddBookForm from './AddBookForm';
 import toastr from 'toastr';
+import moment from 'moment';
+
 
 class AddBookPage extends React.Component {
   constructor(props, context) {
@@ -44,8 +46,14 @@ class AddBookPage extends React.Component {
     if(!this.bookFormIsValid()) {
       return;
     }
+    const book = Object.assign({}, this.state.book);
+
+    if(this.state.book.currentOwner) {
+      let dateNextMonth = moment().add(1, 'months').format("dddd, MMMM Do YYYY");
+      book.checkOutDate = dateNextMonth;
+    }
     this.setState({updating: true});
-    this.props.actions.saveBook(this.state.book)
+    this.props.actions.saveBook(book)
       .then(() => this.redirect())
       .catch(error => {
         toastr.error(error);

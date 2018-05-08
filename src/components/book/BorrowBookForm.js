@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
 
-const BorrowBookForm = ({book, onSave, onDelete, onChange, updating, errors}) => {
+const BorrowBookForm = ({book, onSave, onReturn, onDelete, onChange, updating, errors}) => {
+  const isBookBorrowed = book.currentOwner;
   return (
     <form>
       <h1 className="form__title">Borrow Book</h1>
@@ -20,18 +21,13 @@ const BorrowBookForm = ({book, onSave, onDelete, onChange, updating, errors}) =>
           value={book.currentOwner}
           onChange={onChange}
           error={errors.currentOwner}/>
-        <TextInput
-          name="checkOutDate"
-          label="Check Out Date"
-          value={book.checkOutDate}
-          onChange={onChange}
-          error={errors.checkOutDate}/>
-        <input
-          type="submit"
-          disabled={updating}
-          value={updating ? 'Saving...' : 'Save'}
-          className="btn btn-primary"
-          onClick={onSave}/>
+        <p><strong>Check Out Date: </strong>{book.checkOutDate}</p>
+          <input
+            type="submit"
+            disabled={updating}
+            value={updating ? 'Borrowing...' : 'Borrow'}
+            className="btn btn-primary"
+            onClick={onSave}/>
         <input
           type="submit"
           disabled={updating}
@@ -46,6 +42,7 @@ const BorrowBookForm = ({book, onSave, onDelete, onChange, updating, errors}) =>
 BorrowBookForm.propTypes = {
   book: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired,
+  onReturn: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   updating: PropTypes.bool,
